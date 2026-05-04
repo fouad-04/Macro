@@ -1,0 +1,449 @@
+
+<h2 class="sr-only">Cours de Macroéconomie interactif - Navigation par sections</h2>
+
+<style>
+  .nav-btn { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 8px 14px; font-size: 13px; cursor: pointer; color: var(--color-text-primary); margin: 4px; transition: background 0.15s; }
+  .nav-btn:hover { background: var(--color-background-tertiary); }
+  .nav-btn.active { background: #EEEDFE; border-color: #AFA9EC; color: #3C3489; font-weight: 500; }
+  .section-content { display: none; }
+  .section-content.visible { display: block; }
+  .notion-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .notion-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 8px; }
+  .darija-label { display: inline-block; background: #E1F5EE; color: #085041; font-size: 12px; padding: 2px 8px; border-radius: var(--border-radius-md); margin-bottom: 8px; font-weight: 500; }
+  .example-box { background: #FAEEDA; border-left: 3px solid #EF9F27; border-radius: 0; padding: 10px 14px; margin-top: 10px; font-size: 14px; color: #633806; }
+  .formula-box { background: #E6F1FB; border: 0.5px solid #85B7EB; border-radius: var(--border-radius-md); padding: 10px 14px; text-align: center; font-size: 16px; font-weight: 500; color: #0C447C; margin: 10px 0; }
+  .section-title { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 1.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 0.75rem; }
+  p { font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; margin: 6px 0; }
+  .tag { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 2px 8px; border-radius: var(--border-radius-md); margin: 2px; }
+  .highlight { background: #FAECE7; border-radius: var(--border-radius-md); padding: 2px 6px; color: #993C1D; font-weight: 500; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 12px; margin-bottom: 1rem; }
+  .metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem; text-align: center; }
+  .metric-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .metric-value { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .step { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .step-num { min-width: 26px; height: 26px; background: #7F77DD; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; }
+  .step-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+  .ask-btn { background: transparent; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 8px 14px; font-size: 13px; cursor: pointer; color: var(--color-text-primary); margin-top: 12px; width: 100%; text-align: left; }
+  .ask-btn:hover { background: var(--color-background-secondary); }
+</style>
+
+<div style="padding: 1rem 0;">
+  <div style="margin-bottom: 1.5rem; flex-wrap: wrap; display: flex;">
+    <button class="nav-btn active" onclick="show('intro')">Intro & Définitions</button>
+    <button class="nav-btn" onclick="show('secteurs')">Secteurs institutionnels</button>
+    <button class="nav-btn" onclick="show('operations')">Flux & Opérations</button>
+    <button class="nav-btn" onclick="show('pib')">PIB & Agrégats</button>
+    <button class="nav-btn" onclick="show('keynes')">Modèle Keynésien</button>
+    <button class="nav-btn" onclick="show('multiplicateur')">Multiplicateur</button>
+    <button class="nav-btn" onclick="show('etat')">Rôle de l'État</button>
+  </div>
+
+  <!-- SECTION 1: INTRO -->
+  <div id="s-intro" class="section-content visible">
+    <p class="section-title">Introduction — C'est quoi la macroéconomie ?</p>
+
+    <div class="notion-card">
+      <span class="darija-label">Économie c'est quoi ?</span>
+      <p class="notion-title">L'économie, c'est une science sociale</p>
+      <p>L'économie diraset el insan w slouko f la société. Bħal la sociologie w la psychologie. Katbħat 3 questions kbār :</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Que produire ?</strong> — Aych nakhdmu ?</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Pour qui produire ?</strong> — Limen ?</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Comment produire ?</strong> — Kifasch ?</div></div>
+    </div>
+
+    <div class="grid2">
+      <div class="notion-card">
+        <span class="darija-label">Microéconomie</span>
+        <p class="notion-title">Micro = individu</p>
+        <p>Kaydir على el comportement dial <span class="highlight">wahd el insan</span> ou <span class="highlight">wahda entreprise</span>. Exemple : kifasch el client kayshouf le prix w kayshri.</p>
+        <div class="example-box">Exemple : Ahmed 3ndo 200 DH, kayfakar wach yashtri télé aw manjo.</div>
+      </div>
+      <div class="notion-card">
+        <span class="darija-label">Macroéconomie</span>
+        <p class="notion-title">Macro = pays entier</p>
+        <p>Katshuf el iqtisad dyel <span class="highlight">blad kamla</span> aw mجموعة dyal bladan. Katbħat: PIB, emploi, inflation, consommation nationale...</p>
+        <div class="example-box">Exemple : PIB dyel Maroc 2023 kān ħwali 1,300 milliard DH.</div>
+      </div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Mésoéconomie</span>
+      <p class="notion-title">Méso = niveau intermédiaire (secteur)</p>
+      <p>Bين micro et macro. Katbħat les <span class="highlight">secteurs d'activité</span> : agriculture, santé, transport, éducation...</p>
+      <div class="example-box">Exemple : diraset l'agriculture f Maroc (pas wahd el fellah, pas l'économie kamla).</div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Expliquez-moi la différence entre micro et macroéconomie avec plus d exemples du Maroc')">Demander plus d'exemples marocains ↗</button>
+  </div>
+
+  <!-- SECTION 2: SECTEURS -->
+  <div id="s-secteurs" class="section-content">
+    <p class="section-title">Chapitre I — Les secteurs institutionnels</p>
+
+    <div class="notion-card">
+      <span class="darija-label">Leçon principale</span>
+      <p class="notion-title">L'approche macroéconomique fait 3 choses :</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Tجمع les agents économiques f groupes homogènes : <strong>les secteurs institutionnels</strong></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Tجمع les décisions économiques f catégories : <strong>les opérations économiques</strong></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Tربط les agents dans un schéma visuel : <strong>le circuit économique</strong></div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Les 6 secteurs institutionnels</span>
+      <p class="notion-title">Men hin kay-ji l'argent ? Men hin kaymchi ?</p>
+      <p>Kل agent iqtisadi 3ndo <strong>fonction principale</strong> + <strong>ressource principale</strong> :</p>
+    </div>
+
+    <div class="notion-card" style="border-left: 3px solid #7F77DD;">
+      <p class="notion-title" style="color: #3C3489;">1. Ménages (M)</p>
+      <p><span class="tag">Qui ?</span> Individus ou familles habitant ensemble</p>
+      <p><span class="tag">Fonction ?</span> Consommer des biens et services + fournir le travail</p>
+      <p><span class="tag">Ressource ?</span> Salaires, revenus de capital, transferts sociaux</p>
+      <div class="example-box">Famille Hassani : le père travaille → gagne salaire → achète nourriture, habits...</div>
+    </div>
+
+    <div class="notion-card" style="border-left: 3px solid #1D9E75;">
+      <p class="notion-title" style="color: #085041;">2. Sociétés non financières (SNF)</p>
+      <p><span class="tag">Qui ?</span> Entreprises privées et publiques (Marjane, OCP, etc.)</p>
+      <p><span class="tag">Fonction ?</span> Produire des biens et services marchands</p>
+      <p><span class="tag">Ressource ?</span> Résultat des ventes</p>
+      <div class="example-box">OCP kaykhdam le phosphate, kaybi3o → gayat l'argent min les ventes.</div>
+    </div>
+
+    <div class="notion-card" style="border-left: 3px solid #378ADD;">
+      <p class="notion-title" style="color: #0C447C;">3. Sociétés financières (SF)</p>
+      <p><span class="tag">Qui ?</span> Banques, assurances, caisses d'épargne (CIH, Attijariwafa...)</p>
+      <p><span class="tag">Fonction ?</span> Services financiers (crédits, assurances, épargne)</p>
+      <div class="example-box">CIH Bank katdir crédits lil ménages bach yshriwu dar.</div>
+    </div>
+
+    <div class="notion-card" style="border-left: 3px solid #D85A30;">
+      <p class="notion-title" style="color: #993C1D;">4. Administrations publiques (APU)</p>
+      <p><span class="tag">Qui ?</span> État central, communes, sécurité sociale</p>
+      <p><span class="tag">Fonction ?</span> Produire services non marchands + redistribuer revenus</p>
+      <p><span class="tag">Ressource ?</span> Impôts et cotisations sociales</p>
+      <div class="example-box">L'État Marocain kytakhod les impôts → ypayed les fonctionnaires → ykhdmu les hôpitaux, écoles...</div>
+    </div>
+
+    <div class="notion-card" style="border-left: 3px solid #D4537E;">
+      <p class="notion-title" style="color: #993556;">5. ISBLM (Institutions sans but lucratif)</p>
+      <p><span class="tag">Qui ?</span> Associations, syndicats, partis politiques</p>
+      <p><span class="tag">Fonction ?</span> Services non marchands aux ménages</p>
+      <div class="example-box">Jmiya katsaed les pauvres — machi 3andha but rbaħ l'argent.</div>
+    </div>
+
+    <div class="notion-card" style="border-left: 3px solid #888780;">
+      <p class="notion-title" style="color: #444441;">6. Reste du monde (RDM)</p>
+      <p><span class="tag">Qui ?</span> Agents économiques hors du pays (non-résidents)</p>
+      <p><span class="tag">Fonction ?</span> Rassembler les opérations avec l'étranger</p>
+      <div class="example-box">Kl ma Maroc kayshri pétrole men l'Arabie, hadshi kaydir partie du RDM.</div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Donne-moi un exemple concret pour chaque secteur institutionnel au Maroc')">Plus d'exemples marocains ↗</button>
+  </div>
+
+  <!-- SECTION 3: FLUX ET OPÉRATIONS -->
+  <div id="s-operations" class="section-content">
+    <p class="section-title">Chapitre I — Flux, stocks & opérations économiques</p>
+
+    <div class="grid2">
+      <div class="notion-card">
+        <span class="darija-label">Stock</span>
+        <p class="notion-title">Mesure à un instant T</p>
+        <p>C'est la quantité d'une chose <span class="highlight">à un moment précis</span>.</p>
+        <div class="example-box">Exemple : L'argent f compte bancaire dial Ahmed = 5,000 DH le 1er janvier. C'est un stock.</div>
+      </div>
+      <div class="notion-card">
+        <span class="darija-label">Flux</span>
+        <p class="notion-title">Mesure sur une période</p>
+        <p>C'est la quantité d'une chose <span class="highlight">pendant une période</span> (mois, an...).</p>
+        <div class="example-box">Exemple : Ahmed gagne 3,000 DH par mois = flux. Il dépense 2,000 DH par mois = flux.</div>
+      </div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Analogie simple</span>
+      <p class="notion-title">La baignoire — Image pour comprendre</p>
+      <p>Imagini baignoire (lhoud) :</p>
+      <div class="step"><div class="step-num">💧</div><div class="step-text"><strong>Stock</strong> = l'eau f lhoud maintenant</div></div>
+      <div class="step"><div class="step-num">🚿</div><div class="step-text"><strong>Flux d'entrée</strong> = l'eau katnzal (robinet)</div></div>
+      <div class="step"><div class="step-num">🕳</div><div class="step-text"><strong>Flux de sortie</strong> = l'eau katkhrouj (bouchon)</div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">3 types de flux</span>
+      <p class="notion-title">Flux réels, monétaires, financiers</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Flux réels</strong> : biens et services physiques — le pain, le travail, le logement...</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Flux monétaires</strong> : l'argent payé en contrepartie — le salaire, le prix d'achat...</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Flux financiers</strong> : les dettes et créances — un crédit bancaire est un flux financier.</div></div>
+      <div class="example-box">Ahmed katkhdem f entreprise (flux réel : travail) → l'entreprise katpayed salaire (flux monétaire). Ahmed yakhod crédit (flux financier).</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">3 catégories d'opérations</span>
+      <p class="notion-title">Comment on classe les opérations ?</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Opérations sur biens et services</strong> : d'où viennent les biens (production, importations) et comment on les utilise (consommation, investissement, exportations). <br>Équation : <code>P + M = CI + CF + FBCF + VS + X</code></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Opérations de répartition</strong> : comment le revenu se distribue entre les agents (salaires, dividendes, impôts, prestations sociales...)</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Opérations financières</strong> : comment les agents se financent (crédits, épargne, émission d'actions...)</div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">L'équation emplois-ressources</span>
+      <p class="notion-title">La grande équation de l'économie</p>
+      <div class="formula-box">P + M = CI + CF + FBCF + VS + X</div>
+      <div class="step"><div class="step-num">P</div><div class="step-text">Production nationale (ce qu'on fabrique au Maroc)</div></div>
+      <div class="step"><div class="step-num">M</div><div class="step-text">Importations (ce qu'on achète de l'étranger)</div></div>
+      <div class="step"><div class="step-num">CI</div><div class="step-text">Consommations intermédiaires (matières premières pour produire)</div></div>
+      <div class="step"><div class="step-num">CF</div><div class="step-text">Consommation finale (ce que mangent et achètent les ménages)</div></div>
+      <div class="step"><div class="step-num">FBCF</div><div class="step-text">Investissement en machines, bâtiments (durée sup. à 1 an)</div></div>
+      <div class="step"><div class="step-num">VS</div><div class="step-text">Variation de stocks (ce qu'on stocke ou déstocke)</div></div>
+      <div class="step"><div class="step-num">X</div><div class="step-text">Exportations (ce qu'on vend à l'étranger)</div></div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Explique-moi comment vérifier l équilibre emplois-ressources avec un exemple chiffré')">Exemple chiffré de l'équilibre ↗</button>
+  </div>
+
+  <!-- SECTION 4: PIB -->
+  <div id="s-pib" class="section-content">
+    <p class="section-title">Chapitre II — Le PIB et les agrégats macroéconomiques</p>
+
+    <div class="notion-card">
+      <span class="darija-label">L'idée centrale</span>
+      <p class="notion-title">3 faces de la même richesse</p>
+      <p>La richesse d'un pays (PIB) peut se calculer de <strong>3 façons différentes</strong> qui donnent le même résultat :</p>
+      <div class="formula-box">Produit National = Revenu National = Dépense Nationale</div>
+      <div class="example-box">Si Maroc produit 100 milliards DH → distribue 100 milliards en salaires/profits → les gens dépensent 100 milliards. Toujours pareil !</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Optique Production</span>
+      <p class="notion-title">PIB = Valeur Ajoutée Brute + Impôts - Subventions</p>
+      <p>Chaque entreprise takhdmu valeur ajoutée. La valeur ajoutée = ce qu'elle produit - ce qu'elle a acheté en matières premières.</p>
+      <div class="example-box">Boulangerie: achète farine 10 DH → fait pain → vend 30 DH. Valeur ajoutée = 30 - 10 = 20 DH. Le PIB = somme de toutes les VA.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Optique Revenu</span>
+      <p class="notion-title">PIB = Salaires + Profits + Impôts nets</p>
+      <p>Toute la richesse produite se distribue :</p>
+      <div class="step"><div class="step-num">+</div><div class="step-text">Rémunération des salariés (les salaires des travailleurs)</div></div>
+      <div class="step"><div class="step-num">+</div><div class="step-text">Excédent brut d'exploitation (profit des entreprises)</div></div>
+      <div class="step"><div class="step-num">+</div><div class="step-text">Revenus mixtes (artisans, indépendants)</div></div>
+      <div class="step"><div class="step-num">+</div><div class="step-text">Impôts nets de subventions</div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Optique Dépense (Demande)</span>
+      <p class="notion-title">PIB = CF + FBCF + VS + X - M</p>
+      <p>Hna kanchofu kifasch katsraf la richesse :</p>
+      <div class="step"><div class="step-num">C</div><div class="step-text"><strong>Consommation finale</strong> : les ménages yachriw nourriture, habits, voiture...</div></div>
+      <div class="step"><div class="step-num">I</div><div class="step-text"><strong>Investissement (FBCF)</strong> : entreprises yachriw machines, bâtiments</div></div>
+      <div class="step"><div class="step-num">G</div><div class="step-text"><strong>Dépenses publiques</strong> : l'État ysarf f écoles, hôpitaux</div></div>
+      <div class="step"><div class="step-num">X-M</div><div class="step-text"><strong>Exportations moins Importations</strong> : balance commerciale</div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">PIB nominal vs PIB réel</span>
+      <p class="notion-title">L'inflation peut tromper !</p>
+      <p><strong>PIB nominal</strong> = calculé aux prix actuels (peut augmenter juste parce que les prix montent).</p>
+      <p><strong>PIB réel</strong> = calculé aux prix d'une année de référence (montre la vraie croissance).</p>
+      <div class="formula-box">Déflateur du PIB = (PIB nominal / PIB réel) × 100</div>
+      <div class="example-box">En 2020 : PIB nominal = 1,089.5 milliards DH. PIB réel = 1,062.9 milliards DH. Déflateur = (1089.5/1062.9)×100 ≈ 102.5 → l'inflation a gonflé le PIB nominal de 2.5%.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">RNB — Revenu National Brut</span>
+      <p class="notion-title">La différence entre PIB et RNB</p>
+      <p><strong>PIB</strong> = richesse produite <span class="highlight">sur le territoire</span> (peu importe qui la produit).</p>
+      <p><strong>RNB</strong> = richesse gagnée par <span class="highlight">les résidents nationaux</span> (même à l'étranger).</p>
+      <div class="formula-box">RNB = PIB + revenus reçus du monde - revenus versés au monde</div>
+      <div class="example-box">Un marocain qui travaille en France → son salaire compte dans le RNB du Maroc mais pas dans le PIB du Maroc. Un français qui travaille au Maroc → compte dans le PIB du Maroc mais pas le RNB.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Inflation & IPC</span>
+      <p class="notion-title">Comment mesurer la hausse des prix ?</p>
+      <div class="formula-box">Taux d'inflation = (IPC(t+1) / IPC(t) - 1) × 100</div>
+      <p>L'IPC (Indice des Prix à la Consommation) = kaysur le prix d'un panier de 546 produits. Au Maroc l'année de base = 2017, couvre 18 villes.</p>
+      <div class="example-box">Si IPC 2021 = 103.9 et IPC 2020 = 102.5 → taux inflation = (103.9/102.5 - 1) × 100 = 1.4%</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Indicateurs emploi</span>
+      <p class="notion-title">Taux d'activité, d'emploi, de chômage</p>
+      <div class="formula-box">Taux de chômage = (Chômeurs / Population active) × 100</div>
+      <p>Au Maroc : chômeur = personne +15 ans, sans emploi, disponible pour travailler et qui cherche activement (définition BIT).</p>
+      <div class="example-box">Population active = 100 personnes. 12 sans emploi. Taux chômage = 12/100 × 100 = 12%.</div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Comment calculer le PIB du Maroc avec un exemple complet des 3 optiques ?')">Calcul complet PIB Maroc ↗</button>
+  </div>
+
+  <!-- SECTION 5: KEYNES -->
+  <div id="s-keynes" class="section-content">
+    <p class="section-title">Chapitre III — Le modèle keynésien simplifié</p>
+
+    <div class="notion-card">
+      <span class="darija-label">C'est qui Keynes ?</span>
+      <p class="notion-title">John Maynard Keynes (1883-1946)</p>
+      <p>En <strong>1936</strong>, Keynes nchar kTabu "Théorie générale de l'emploi, de l'intérêt et de la monnaie". Jab <span class="highlight">révolution</span> f l'économie — bniya alternative aux classiques.</p>
+      <div class="example-box">Contexte : après la Grande Dépression de 1929 — millions de chômeurs, les entreprises ne produisent plus. Les classiques disaient "ça va se régler seul" — Keynes dit NON !</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Keynes vs Classiques</span>
+      <p class="notion-title">4 grandes différences</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Marché imparfait</strong> : Keynes dit que l'économie a des monopoles et oligopoles, machi concurrence parfaite.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Information imparfaite</strong> : Les agents ma3arfouch l'avenir, décisions basées sur anticipations.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Non à la Loi de Say</strong> : Les classiques disent "l'offre crée sa propre demande" — Keynes dit <span class="highlight">NON</span>, c'est la demande qui crée l'offre !</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Rôle de l'État</strong> : L'État doit intervenir pour corriger les déséquilibres du marché.</div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Principe fondamental</span>
+      <p class="notion-title">La demande effective</p>
+      <p>Chez Keynes : <span class="highlight">c'est la demande qui détermine l'offre</span>. Les entreprises produisent ce qu'on leur demande — pas plus, pas moins.</p>
+      <div class="formula-box">D = C + I → si D ↑ alors Y (production) ↑ → emploi ↑</div>
+      <div class="example-box">Si les gens dépensent beaucoup (forte demande), les usines produisent plus → embauchent plus de travailleurs. Si la demande baisse → usines ralentissent → licenciements → chômage.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Équilibre de sous-emploi</span>
+      <p class="notion-title">On peut avoir équilibre AVEC chômage !</p>
+      <p>Keynes montre que l'économie peut être en équilibre même s'il y a du chômage. C'est l'<span class="highlight">équilibre de sous-emploi</span>.</p>
+      <p><strong>Ex ante</strong> = ce que les agents souhaitent (avant). <strong>Ex post</strong> = ce qui s'est passé réellement (après).</p>
+      <div class="example-box">Les ménages veulent consommer 500 DH mais n'ont que 400 DH de revenu → écart → chômage → l'économie s'équilibre à un niveau bas.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Fonction de consommation</span>
+      <p class="notion-title">La loi psychologique fondamentale de Keynes</p>
+      <p>Keynes dit : quand le revenu augmente, la consommation augmente, mais <span class="highlight">moins que proportionnellement</span>.</p>
+      <div class="formula-box">C = cY + C₀</div>
+      <div class="step"><div class="step-num">C</div><div class="step-text">Consommation totale des ménages</div></div>
+      <div class="step"><div class="step-num">c</div><div class="step-text">Propension marginale à consommer (0 &lt; c &lt; 1) — la part du revenu supplémentaire dépensée en conso</div></div>
+      <div class="step"><div class="step-num">Y</div><div class="step-text">Revenu disponible</div></div>
+      <div class="step"><div class="step-num">C₀</div><div class="step-text">Consommation autonome (même si Y=0, on consomme ça pour survivre)</div></div>
+      <div class="example-box">Si c = 0.8, C₀ = 50 : quand Y = 1000 → C = 0.8×1000 + 50 = 850. Si Y monte à 1400 → C = 0.8×1400 + 50 = 1170. ΔC/ΔY = 320/400 = 80% ✓</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Épargne = Investissement</span>
+      <p class="notion-title">L'équilibre macroéconomique fondamental</p>
+      <p>Y = C + S (revenu = conso + épargne). Et à l'équilibre Y = C + I. Donc :</p>
+      <div class="formula-box">S = I (épargne = investissement)</div>
+      <p>Cette égalité <strong>doit toujours être vérifiée</strong> à l'équilibre.</p>
+      <div class="example-box">Si I₀ = 10 et C₀ = 50, c = 0.8 → Y* = (C₀+I₀)/(1-c) = (50+10)/(1-0.8) = 60/0.2 = 300 DH.</div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Résous un exemple complet du modèle keynésien avec calcul du revenu d équilibre Y* et vérification S=I')">Exemple complet avec calcul ↗</button>
+  </div>
+
+  <!-- SECTION 6: MULTIPLICATEUR -->
+  <div id="s-multiplicateur" class="section-content">
+    <p class="section-title">Chapitre III — Le multiplicateur keynésien</p>
+
+    <div class="notion-card">
+      <span class="darija-label">L'idée géniale de Keynes</span>
+      <p class="notion-title">1 DH dépensé = plus de 1 DH de richesse créée !</p>
+      <p>Si l'État ou une entreprise <span class="highlight">injecte de l'argent</span> dans l'économie, l'effet total est <strong>plus grand</strong> que l'injection initiale. C'est l'effet multiplicateur.</p>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Exemple chiffré</span>
+      <p class="notion-title">100 DH investis → 500 DH de richesse (si c=0.8)</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text">L'État construit une route : dépense <strong>100 DH</strong> → ouvriers gagnent 100 DH</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Les ouvriers consomment 80% = <strong>80 DH</strong> → commerçants gagnent 80 DH</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Les commerçants dépensent 80% = <strong>64 DH</strong> → d'autres gagnent 64 DH</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">64 × 0.8 = <strong>51.2 DH</strong>... et ainsi de suite</div></div>
+      <div class="step"><div class="step-num">∑</div><div class="step-text">Total = 100 + 80 + 64 + 51.2 + ... = <strong>500 DH</strong> !</div></div>
+      <div class="example-box">Multiplicateur = 1/(1-0.8) = 1/0.2 = 5. Donc 100 DH × 5 = 500 DH de richesse totale créée.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Formule du multiplicateur</span>
+      <p class="notion-title">k = 1 / (1 - c) = 1 / s</p>
+      <div class="formula-box">k = ΔY / ΔI₀ = 1 / (1 - c)</div>
+      <p>Plus la propension marginale à consommer (c) est <span class="highlight">grande</span>, plus le multiplicateur est <span class="highlight">grand</span>.</p>
+      <div class="grid2">
+        <div class="metric"><div class="metric-label">c = 0.50</div><div class="metric-value">k = 2</div></div>
+        <div class="metric"><div class="metric-label">c = 0.80</div><div class="metric-value">k = 5</div></div>
+      </div>
+      <div class="grid2">
+        <div class="metric"><div class="metric-label">c = 0.90</div><div class="metric-value">k = 10</div></div>
+        <div class="metric"><div class="metric-label">c = 0.75</div><div class="metric-value">k = 4</div></div>
+      </div>
+      <div class="example-box">Interprétation : si c = 0.9 et on investit 100 DH → richesse totale créée = 100 × 10 = 1,000 DH ! Les gens dépensent beaucoup → effet plus fort.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Revenu d'équilibre avec multiplicateur</span>
+      <p class="notion-title">La formule générale</p>
+      <div class="formula-box">Y* = (1 / 1-c) × (C₀ + I₀)</div>
+      <div class="formula-box">ΔY = k × ΔI₀</div>
+      <div class="example-box">c=0.8, C₀=50, I₀=10 → Y* = 5 × 60 = 300. Si I₀ monte à 35 → ΔI₀=25 → ΔY = 5×25 = 125 → nouveau Y* = 425.</div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Montre-moi le multiplicateur dynamique période par période avec un tableau comme dans le cours')">Tableau dynamique du multiplicateur ↗</button>
+  </div>
+
+  <!-- SECTION 7: ÉTAT -->
+  <div id="s-etat" class="section-content">
+    <p class="section-title">Chapitre III — L'État dans le modèle keynésien</p>
+
+    <div class="notion-card">
+      <span class="darija-label">Politique budgétaire</span>
+      <p class="notion-title">L'État peut agir sur l'économie via son budget</p>
+      <p>L'État a 2 outils principaux :</p>
+      <div class="step"><div class="step-num">G</div><div class="step-text"><strong>Dépenses publiques (G)</strong> : routes, écoles, hôpitaux, salaires fonctionnaires...</div></div>
+      <div class="step"><div class="step-num">T</div><div class="step-text"><strong>Impôts (T)</strong> : TVA, IR, IS... ce que l'État prélève</div></div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Fonction d'imposition</span>
+      <p class="notion-title">Les impôts = fonction du revenu</p>
+      <div class="formula-box">T = tY + T₀</div>
+      <div class="step"><div class="step-num">t</div><div class="step-text">Taux d'imposition marginal (0 &lt; t &lt; 1) — la part du revenu prélevée en impôts</div></div>
+      <div class="step"><div class="step-num">T₀</div><div class="step-text">Impôt forfaitaire (exogène) — montant fixe, indépendant du revenu</div></div>
+      <div class="example-box">Si t = 0.2 (20% d'IR) et Y = 1000 DH → T = 0.2×1000 = 200 DH d'impôts. Revenu disponible = 1000 - 200 = 800 DH.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Équilibre avec État</span>
+      <p class="notion-title">Le revenu disponible des ménages change !</p>
+      <p>Maintenant les ménages consomment sur leur revenu <span class="highlight">après impôts</span> :</p>
+      <div class="formula-box">Revenu disponible = Y - T̄</div>
+      <div class="formula-box">C = c(Y - T̄) + C₀</div>
+      <div class="formula-box">Y = C + I + G → Y* = (1/1-c) × (-cT̄ + C₀ + I₀ + Ḡ)</div>
+      <div class="example-box">c=0.8, C₀=50, I₀=10, G=30, T=20 → Y* = 5 × (-0.8×20 + 50 + 10 + 30) = 5 × (-16+90) = 5 × 74 = 370.</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Multiplicateur de la dépense publique</span>
+      <p class="notion-title">Si G augmente de ΔG, le revenu augmente de :</p>
+      <div class="formula-box">ΔY* = (1 / 1-c) × ΔḠ = kG × ΔG</div>
+      <div class="example-box">c=0.8 → kG = 5. Si l'État augmente ses dépenses de 100 DH → Y augmente de 500 DH. Politique expansionniste !</div>
+    </div>
+
+    <div class="notion-card">
+      <span class="darija-label">Multiplicateur fiscal</span>
+      <p class="notion-title">Si les impôts baissent, le revenu augmente (mais moins)</p>
+      <div class="formula-box">kT = ΔY* / ΔT̄ = -c / (1-c) = -c × kG</div>
+      <p>Le multiplicateur fiscal est <span class="highlight">négatif</span> : si T baisse → Y monte. Si T monte → Y baisse.</p>
+      <p>Il est aussi <span class="highlight">plus faible</span> que le multiplicateur des dépenses (kT = -c × kG).</p>
+      <div class="example-box">c=0.8 → kT = -0.8/(1-0.8) = -4. Si l'État réduit les impôts de 100 DH → Y augmente seulement de 400 DH (moins que les dépenses publiques qui donnent 500).</div>
+      <div class="example-box">Pourquoi moins ? Parce que les ménages n'utilisent pas tout leur revenu supplémentaire en consommation — une partie (20%) est épargnée.</div>
+    </div>
+
+    <button class="ask-btn" onclick="sendPrompt('Explique le théorème de Haavelmo : que se passe-t-il si l État augmente G et T du même montant ?')">Le théorème de Haavelmo ↗</button>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section-content').forEach(s => s.classList.remove('visible'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('s-' + id).classList.add('visible');
+  event.target.classList.add('active');
+}
+</script>
